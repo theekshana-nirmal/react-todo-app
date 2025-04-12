@@ -13,7 +13,8 @@ function ToDoList() {
   }
 
   function handleAddTask() {
-    setNewTask();
+    setTasks(t => [...t, newTask]);
+    setNewTask("")
   }
 
   function handleDeleteTask(index) {}
@@ -32,7 +33,14 @@ function ToDoList() {
         </button>
       </div>
       <ol>
-        {tasks.map((task, index) => (<li key={index}><span className="text">{task}</span></li>))}
+        {tasks.map((task, index) => (
+          <li key={index}>
+            <span className="text">{task}</span>
+            <button className="delete-btn" onClick={() => handleDeleteTask(index)}>Delete</button>
+            <button className="move-btn" onClick={() => handleMoveUp(index)}>☝🏻</button>
+            <button className="move-btn" onClick={() => handleMoveDown(index)}>👇🏻</button>
+          </li>
+        ))}
       </ol>
     </>
   );
