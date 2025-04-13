@@ -5,8 +5,8 @@ body {
   background-image: url(./../public/vite.svg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 500px;
-  backdrop-filter: blur(5rem);
+  background-size: 300px;
+  backdrop-filter: blur(10rem);
 }
 
 .container {
