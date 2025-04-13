@@ -46,32 +46,36 @@ function ToDoList() {
 
   return (
     <>
-      <div>
-        <h1>To-Do List</h1>
-        <input type="text" onChange={handleInputChange} value={newTask} />
-        <button className="add-btn" onClick={handleAddTask}>
-          Add
-        </button>
+      <div className="container">
+        <div className="add-todo-section">
+          <h1>To-Do List</h1>
+          <div className="input-section">
+            <input type="text" onChange={handleInputChange} value={newTask} />
+            <button className="add-btn" onClick={handleAddTask}>
+              Add
+            </button>
+          </div>
+        </div>
+        <ol>
+          {tasks.map((task, index) => (
+            <li key={index}>
+              <span className="text">{task}</span>
+              <button
+                className="delete-btn"
+                onClick={() => handleDeleteTask(index)}
+              >
+                Delete
+              </button>
+              <button className="move-btn" onClick={() => handleMoveUp(index)}>
+                ☝🏻
+              </button>
+              <button className="move-btn" onClick={() => handleMoveDown(index)}>
+                👇🏻
+              </button>
+            </li>
+          ))}
+        </ol>
       </div>
-      <ol>
-        {tasks.map((task, index) => (
-          <li key={index}>
-            <span className="text">{task}</span>
-            <button
-              className="delete-btn"
-              onClick={() => handleDeleteTask(index)}
-            >
-              Delete
-            </button>
-            <button className="move-btn" onClick={() => handleMoveUp(index)}>
-              ☝🏻
-            </button>
-            <button className="move-btn" onClick={() => handleMoveDown(index)}>
-              👇🏻
-            </button>
-          </li>
-        ))}
-      </ol>
     </>
   );
 }
