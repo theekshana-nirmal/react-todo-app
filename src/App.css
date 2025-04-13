@@ -1,1 +1,77 @@
-/* @import "tailwindcss"; */
+@import "tailwindcss";
+
+body {
+  @apply h-screen w-screen flex flex-col justify-center items-center;
+  background-image: url(./../public/vite.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 500px;
+  backdrop-filter: blur(5rem);
+}
+
+.container {
+  @apply min-w-3xl flex flex-col gap-16 p-8 rounded-2xl shadow border-gray-200 bg-white;
+}
+
+.add-todo-section {
+  @apply flex flex-col gap-2;
+}
+
+.input-section {
+  @apply flex gap-2;
+}
+
+.add-todo-section h1 {
+  @apply text-center font-bold text-4xl;
+}
+
+.add-todo-section input {
+  @apply border border-gray-200 rounded-md p-2 flex-1/2
+}
+
+.add-todo-section input:focus {
+  @apply outline-none;
+}
+
+
+/* Task Section */
+ol {
+  @apply flex flex-col gap-4;
+}
+
+ol li {
+  @apply flex gap-2 p-2 rounded-md border border-gray-200 items-center;
+}
+
+.text {
+  @apply flex-1/2;
+}
+
+button {
+  @apply transition rounded-sm text-white font-bold p-2;
+}
+
+.add-btn {
+  @apply bg-green-400;
+}
+
+.delete-btn {
+  @apply bg-red-400;
+}
+
+.move-btn {
+  @apply bg-blue-400;
+}
+
+/* Hover effects */
+.add-btn:hover {
+  @apply bg-green-500
+}
+
+.delete-btn:hover {
+  @apply bg-red-500
+}
+
+.move-btn:hover {
+  @apply bg-blue-500
+}
